@@ -49,13 +49,13 @@ This project sends and manages sales outreach emails with an AI agent that:
 
 ```mermaid
 flowchart LR
-    A[📇 New Lead] --> B[/email/send-outreach]
+    A[📇 New Lead] --> B["/email/send-outreach"]
     B --> C[Sales Agent Logic<br/>Groq / Llama 3.3]
     C --> D[SendGrid API]
     D --> E[📧 Email sent to lead]
     E --> F[Lead replies]
     F --> G[SendGrid Inbound Parse]
-    G --> H[/email/webhook]
+    G --> H["/email/webhook"]
     H --> C
 ```
 
