@@ -15,9 +15,17 @@ Part of the **AI Business Automation Suite** — Phase 3 of 4.
 
 ## Preview
 
-![Email Outreach Agent Demo](screenshot.png)
+**1. Sending a personalized outreach email:**
 
-*(FastAPI interactive docs showing a real outreach email being generated and sent — verified as "Delivered" via SendGrid's activity log)*
+![Sending outreach request](screenshot-1-request.png)
+
+**2. AI-generated response — Groq wrote a personalized subject and body:**
+
+![Successful response with AI-generated subject](screenshot-2-response.png)
+
+**3. Confirmed delivery in SendGrid's Activity Log:**
+
+![SendGrid delivery confirmation](screenshot-3-delivered.png)
 
 ---
 
