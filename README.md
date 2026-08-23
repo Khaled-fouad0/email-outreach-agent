@@ -1,4 +1,4 @@
-# 📧 AI Email Outreach Agent
+# AI Email Outreach Agent
 
 > An AI-powered email agent that sends personalized outreach emails to potential leads and automatically replies when they respond — no human agent required.
 
@@ -37,19 +37,19 @@ This project sends and manages sales outreach emails with an AI agent that:
 - Keeps the conversation coherent across multiple email exchanges
 - Runs fully in **mock mode** with zero API keys — so anyone can try it in under a minute
 
-> 🎯 **Mock Mode by default** — no real API keys needed to explore the code and logic. Add real keys to `.env` and it automatically switches to production mode.
+> **Mock Mode by default** — no real API keys needed to explore the code and logic. Add real keys to `.env` and it automatically switches to production mode.
 
 ---
 
 ## Features
 
-- ✉️ **Automated outreach emails** — personalized subject + body generated per lead
-- 🧠 **Context-aware replies** powered by Groq (Llama 3.3 70B) — free tier, no OpenAI cost
-- 🌍 **Automatic language matching** — replies in Arabic or English based on the lead's message
-- 🧵 **Per-lead conversation memory** — remembers context across the email thread
-- 🎭 **Mock mode** — full functionality testable with zero API keys or cost
-- 🐳 **Dockerized** — one command to run
-- ✅ **Automated tests** — Pytest suite covering all endpoints
+- **Automated outreach emails** — personalized subject + body generated per lead
+- **Context-aware replies** powered by Groq (Llama 3.3 70B) — free tier, no OpenAI cost
+- **Automatic language matching** — replies in Arabic or English based on the lead's message
+- **Per-lead conversation memory** — remembers context across the email thread
+- **Mock mode** — full functionality testable with zero API keys or cost
+- **Dockerized** — one command to run
+- **Automated tests** — Pytest suite covering all endpoints
 
 ---
 
@@ -57,10 +57,10 @@ This project sends and manages sales outreach emails with an AI agent that:
 
 ```mermaid
 flowchart LR
-    A[📇 New Lead] --> B["/email/send-outreach"]
+    A[ New Lead] --> B["/email/send-outreach"]
     B --> C[Sales Agent Logic<br/>Groq / Llama 3.3]
     C --> D[SendGrid API]
-    D --> E[📧 Email sent to lead]
+    D --> E[ Email sent to lead]
     E --> F[Lead replies]
     F --> G[SendGrid Inbound Parse]
     G --> H["/email/webhook"]
@@ -77,7 +77,7 @@ flowchart LR
 
 ---
 
-## 📈 Why This Matters (Industry Data)
+## Why This Matters (Industry Data)
 
 AI outreach agents aren't a novelty — they're becoming standard infrastructure for sales teams:
 
@@ -90,7 +90,7 @@ AI outreach agents aren't a novelty — they're becoming standard infrastructure
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 email-outreach-agent/
@@ -113,7 +113,7 @@ email-outreach-agent/
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -126,7 +126,7 @@ email-outreach-agent/
 
 ---
 
-## 🚀 Setup & Run
+## Setup & Run
 
 ### 1. Clone the repository
 
@@ -165,7 +165,7 @@ Interactive docs at `http://localhost:8002/docs`
 
 ---
 
-## 🔌 API Reference
+## API Reference
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -191,19 +191,19 @@ curl -X POST http://localhost:8002/email/webhook \
 
 ---
 
-## ✅ Tested & Verified
+## Tested & Verified
 
 This project has been tested against the real SendGrid API, not just simulated requests:
-- ✅ Outreach emails are generated with personalized, relevant subject lines and bodies
-- ✅ SendGrid confirms delivery (`Delivered` status in Activity Log)
-- ✅ The webhook correctly processes incoming replies and generates context-aware responses
-- ✅ Conversation memory persists correctly across the email thread
+-  Outreach emails are generated with personalized, relevant subject lines and bodies
+- SendGrid confirms delivery (`Delivered` status in Activity Log)
+- The webhook correctly processes incoming replies and generates context-aware responses
+- Conversation memory persists correctly across the email thread
 
 > **Known limitation:** emails sent via SendGrid's default (non-authenticated) sending domain can be silently filtered by some mail providers (e.g. Gmail) even after being marked "Delivered" at the SMTP level. This is a common limitation of new SendGrid accounts without full domain authentication (DNS-based), not a bug in this codebase. Production use would require setting up SendGrid Domain Authentication.
 
 ---
 
-## 🧪 Running Tests
+## Running Tests
 
 ```bash
 pytest tests/ -v
@@ -211,7 +211,7 @@ pytest tests/ -v
 
 ---
 
-## 🔒 Notes
+## Notes
 
 - Session storage (`active_sessions`) is in-memory — restarting the server clears all active conversations. Use Redis for multi-instance production deployments.
 - `SENDER_EMAIL` must exactly match a verified Sender Identity in your SendGrid account, or sending will fail.
@@ -219,7 +219,7 @@ pytest tests/ -v
 
 ---
 
-## 🚧 Possible Extensions
+## Possible Extensions
 
 - [ ] SendGrid Domain Authentication for reliable inbox delivery
 - [ ] Redis-backed session storage for multi-instance deployments
@@ -230,17 +230,17 @@ pytest tests/ -v
 
 ---
 
-## 🗺️ Roadmap (AI Business Automation Suite)
+## Roadmap (AI Business Automation Suite)
 
 - [x] **Phase 1:** Voice Sales Agent
 - [x] **Phase 2:** WhatsApp Sales Agent
 - [x] **Phase 3:** Email Outreach Agent ← *we are here*
-- [ ] **Phase 4:** Appointment Booking Agent
+- [x] **Phase 4:** Appointment Booking Agent
 - [ ] **Phase 5:** Unified platform combining all agents
 
 ---
 
-## 👤 Author
+## Author
 
 Built by **Khaled** 🤙🏽
 
@@ -248,6 +248,6 @@ Built by **Khaled** 🤙🏽
 
 ---
 
-## 📄 License
+## License
 
 MIT — free to use, modify, and distribute.
