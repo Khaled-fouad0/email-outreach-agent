@@ -1,6 +1,6 @@
 """
 Main Entry Point
-=================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This is where everything comes together and the server starts.
 """
 
