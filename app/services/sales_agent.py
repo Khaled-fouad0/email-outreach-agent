@@ -1,14 +1,14 @@
 """
 Sales Agent Service (Email)
-=============================
-This is the "brain" of the agent. It has two jobs:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+has two jobs:
 
 1) Generate a cold outreach email to a new potential lead
 2) Reply intelligently when a lead responds to that email
 
 Two modes:
-1) Mock Mode: simple template-based replies - for testing without API keys
-2) Real Mode: uses Groq (Llama 3) to generate dynamic, personalized emails
+1) Mock Mode:replies without API keys
+2) Real Mode: uses Groq (Llama 3) to generate personalized emails
 """
 
 from app.config import settings
@@ -62,7 +62,7 @@ class SalesAgent:
         return {"subject": subject, "body": body}
 
     def _mock_reply(self, user_text: str) -> str:
-        """Simple rule-based reply for testing without real API keys."""
+        """reply without real API keys."""
         text = user_text.lower()
 
         price_keywords = ["سعر", "تكلفة", "price", "cost"]
@@ -79,7 +79,8 @@ class SalesAgent:
             return "Thanks for your reply! We provide AI automation solutions that save your company time and money. Want to hear more details?"
 
     def get_response(self, user_text: str) -> str:
-        """Main entry point: takes lead's reply email, returns agent's reply body."""
+        """Main entry point:
+        takes lead's reply email, returns agent's reply body."""
         self.conversation_history.append({"role": "user", "content": user_text})
 
         if self.mock_mode:
@@ -91,7 +92,8 @@ class SalesAgent:
         return reply
 
     def _real_groq_reply(self, user_text: str) -> str:
-        """Real mode: generates a reply to an incoming email using Groq."""
+        """Real mode:
+        generates a reply to an incoming email using Groq."""
         from openai import OpenAI
 
         client = OpenAI(
@@ -108,7 +110,8 @@ class SalesAgent:
         return response.choices[0].message.content
 
     def _real_groq_email(self, prompt: str) -> tuple[str, str]:
-        """Real mode: generates a fresh outreach email (subject + body) using Groq."""
+        """Real mode:
+        generates a fresh outreach email (subject + body) using Groq."""
         from openai import OpenAI
 
         client = OpenAI(
