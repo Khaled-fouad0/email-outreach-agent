@@ -1,6 +1,6 @@
 """
 Email Sender Service
-======================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Handles the actual sending of emails via SendGrid's API.
 Kept separate from the routes and the agent logic, so if we ever
 switch email providers, we only need to change this one file.
