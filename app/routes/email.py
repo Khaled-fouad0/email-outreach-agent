@@ -1,6 +1,6 @@
 """
 Email Routes
-============
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Two different endpoints for two different jobs:
 
 1) /email/send-outreach -> triggered manually (or by a script) to send
